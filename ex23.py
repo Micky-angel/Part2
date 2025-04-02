@@ -1,5 +1,4 @@
-# ex2
-
+# ex3
 import serial
 import RPi.GPIO as GPIO
 import time
@@ -189,7 +188,12 @@ try:
 # ---------------------------------------------------UART VARIABLES -------------------------------
 # ---------------------------------------------------LECTURA DE DATOS -------------------------------
         info = raspi.read_file_data(archivo)
-        infonum = int(info[0])
+        texto = info[0]
+        var = texto[0]
+
+        infonum = int(texto[1:])
+        if var == "F":
+            infonum = 50*(infonum - 32)/90
         if infonum > 20:
             datoraspi = str(3) + "\n"
         elif infonum < 2:

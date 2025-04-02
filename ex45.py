@@ -1,4 +1,4 @@
-# ex4
+# ex6
 import serial
 import RPi.GPIO as GPIO
 import time
